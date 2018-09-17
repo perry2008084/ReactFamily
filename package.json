@@ -21,8 +21,10 @@
     "webpack-dev-server": "^2.11.3"
   },
   "dependencies": {
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
-    "react-router-dom": "^4.3.1"
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^3.7.2"
   }
 }
