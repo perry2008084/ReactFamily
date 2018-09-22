@@ -1,5 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge');
+const webpack = require('webpack');
 
 const commonConfig = require('./webpack.common.config.js');
 
@@ -26,7 +27,12 @@ const devConfig = {
     historyApiFallback: true,
     host: '0.0.0.0',
     port: 9000
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      MOCK: true
+    })
+  ]
 };
 
 module.exports = merge({
