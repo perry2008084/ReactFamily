@@ -2,6 +2,7 @@ const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   // 入口
@@ -15,7 +16,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, './dist'),
     filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js'
+    chunkFilename: '[name].[chunkhash].js',
+    publicPath: '/'
   },
 
   /* src文件夹下面的以.js结尾的文件，要使用babel解析 */
@@ -68,6 +70,7 @@ module.exports = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new webpack.HashedModuleIdsPlugin()
+    new webpack.HashedModuleIdsPlugin(),
+    new CleanWebpackPlugin(['dist'])
   ]
 };
