@@ -17,8 +17,8 @@ const devConfig = {
   },
   module: {
     rules: [{
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader']
+      test: /\.(css|scss)$/,
+      use: ['style-loader', 'css-loader', 'postcss-loader']
     }]
   },
   devServer: {
