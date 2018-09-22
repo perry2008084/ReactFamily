@@ -5,6 +5,7 @@ import {getUserInfo} from 'actions/userInfo';
 class UserInfo extends Component {
   render() {
     const {userInfo, isLoading, errorMsg} = this.props.userInfo;
+    console.log('view userinfo: ', userInfo);
     return (
       <div>
         {
